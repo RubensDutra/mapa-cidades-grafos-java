@@ -1,3 +1,5 @@
+package model;
+
 public class Cidade {
 
     private String nome;
