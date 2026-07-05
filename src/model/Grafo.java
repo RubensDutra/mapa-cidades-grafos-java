@@ -8,8 +8,9 @@ public class Grafo {
     private boolean[][] matrizAdjacente;
     private List<Cidade> cidades;
 
-    public Grafo() {
-        this.matrizAdjacente = new boolean[4][4];
+    public Grafo(int capacidade) {
+
+        this.matrizAdjacente = new boolean[capacidade][capacidade];
         this.cidades = new ArrayList<>();
     }
 
