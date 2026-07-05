@@ -9,7 +9,7 @@ public class Grafo {
     private List<Cidade> cidades;
 
     public Grafo() {
-        this.matrizAdjacente = new boolean[3][3];
+        this.matrizAdjacente = new boolean[4][4];
         this.cidades = new ArrayList<>();
     }
 
@@ -19,5 +19,40 @@ public class Grafo {
 
     public List<Cidade> getCidades() {
         return cidades;
+    }
+
+    public void listarCidades() {
+
+        if (cidades.isEmpty()) {
+            return;
+        }
+        cidades.forEach(System.out::println);
+    }
+
+
+    public int buscarIndiceCidade(String cidadeProcurada) {
+
+        for (int i = 0; i < cidades.size(); i++) {
+
+            String cidade = cidades.get(i).getNome();
+
+            if (cidade.equalsIgnoreCase(cidadeProcurada)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    public void adicionarEstrada(String cidadeOrigem, String cidadeDestino) {
+
+        int origem = buscarIndiceCidade(cidadeOrigem);
+        int destino = buscarIndiceCidade(cidadeDestino);
+
+        if (origem != -1 && destino != -1) {
+            matrizAdjacente[origem][destino] = true;
+            matrizAdjacente[destino][origem] = true;
+        }
+
     }
 }
