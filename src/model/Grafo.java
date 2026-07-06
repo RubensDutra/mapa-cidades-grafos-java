@@ -34,6 +34,16 @@ public class Grafo {
         return -1;
     }
 
+    public void imprimirMatriz() {
+
+        for (int i = 0; i < matrizAdjacente.length; i++) {
+            for (int j = 0; j < matrizAdjacente[i].length; j++) {
+                System.out.print(matrizAdjacente[i][j] + " | ");
+            }
+            System.out.println();
+        }
+    }
+
     public void adicionarEstrada(String cidadeOrigem, String cidadeDestino) {
 
         int origem = buscarIndiceCidade(cidadeOrigem);
@@ -78,5 +88,8 @@ public class Grafo {
         cidades.forEach(System.out::println);
     }
 
+    public int getQuantidadeCidades() {
+        return (cidades.size() - 1);
+    }
 
 }

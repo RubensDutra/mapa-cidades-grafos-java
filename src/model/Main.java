@@ -12,10 +12,12 @@ public class Main {
         Cidade cidade1 = new Cidade("CN");
         Cidade cidade2 = new Cidade("Buriti");
 
+        System.out.println("wfe "+grafo.getQuantidadeCidades());
 
         grafo.adicionarCidade(cidade);
         grafo.adicionarCidade(cidade1);
         grafo.adicionarCidade(cidade2);
+        System.out.println("wfe "+grafo.getQuantidadeCidades());
 
 
         grafo.adicionarEstrada("Duque", "Cn");
