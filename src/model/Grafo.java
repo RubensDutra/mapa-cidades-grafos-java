@@ -9,7 +9,6 @@ public class Grafo {
     private List<Cidade> cidades;
 
     public Grafo(int capacidade) {
-
         this.matrizAdjacente = new boolean[capacidade][capacidade];
         this.cidades = new ArrayList<>();
     }
@@ -21,15 +20,6 @@ public class Grafo {
     public List<Cidade> getCidades() {
         return cidades;
     }
-
-    public void listarCidades() {
-
-        if (cidades.isEmpty()) {
-            return;
-        }
-        cidades.forEach(System.out::println);
-    }
-
 
     public int buscarIndiceCidade(String cidadeProcurada) {
 
@@ -44,7 +34,6 @@ public class Grafo {
         return -1;
     }
 
-
     public void adicionarEstrada(String cidadeOrigem, String cidadeDestino) {
 
         int origem = buscarIndiceCidade(cidadeOrigem);
@@ -56,4 +45,38 @@ public class Grafo {
         }
 
     }
+
+    public boolean existeEstrada(int cidadeOrigem, int cidadeDestino) {
+
+        int indiceMaximo = (cidades.size() - 1);
+
+        if (cidadeOrigem < 0 || cidadeOrigem > indiceMaximo) {
+            return false;
+        }
+
+        if (cidadeDestino < 0 || cidadeDestino > indiceMaximo) {
+            return false;
+        }
+
+        return matrizAdjacente[cidadeOrigem][cidadeDestino];
+    }
+
+
+    public boolean existeEstrada(String cidadeOrigem, String cidadeDestino) {
+
+        int origem = buscarIndiceCidade(cidadeOrigem);
+        int destino = buscarIndiceCidade(cidadeDestino);
+
+        return existeEstrada(origem, destino);
+    }
+
+    public void listarCidades() {
+
+        if (cidades.isEmpty()) {
+            return;
+        }
+        cidades.forEach(System.out::println);
+    }
+
+
 }
