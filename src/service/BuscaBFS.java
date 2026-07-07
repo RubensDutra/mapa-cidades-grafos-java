@@ -40,9 +40,9 @@ public class BuscaBFS {
 
         pais.put(indiceOrigem, -1);
 
-        boolean destinoEcontrado = false;
+        boolean destinoEncontrado = false;
 
-        while (destinoEcontrado || fila.isEmpty()) {
+        while (!destinoEncontrado && !fila.isEmpty()) {
 
             int cidadeAtual = fila.remove();
 
@@ -54,19 +54,23 @@ public class BuscaBFS {
 
                         cidadesVisitadas[i] = true;
                         fila.add(i);
-                        pais.put(i,cidadeAtual);
+                        pais.put(i, cidadeAtual);
 
-                        if (i == indiceDestino){
-                            destinoEcontrado = true;
+                        if (i == indiceDestino) {
+                            destinoEncontrado = true;
                         }
                     }
                 }
             }
         }
 
+        if (!destinoEncontrado) {
+            return caminho;
+        }
+
         int cidade = indiceDestino;
 
-        while (cidade != -1){
+        while (cidade != -1) {
 
             Cidade cidadeEncontrada = grafo.getCidade(cidade);
 
@@ -76,12 +80,12 @@ public class BuscaBFS {
 
         }
 
-
+        Collections.reverse(caminho);
 
         return caminho;
     }
 
-    public void caminho(List<Cidade> cidades){
+    public void caminho(List<Cidade> cidades) {
 
     }
 }
