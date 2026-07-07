@@ -92,4 +92,8 @@ public class Grafo {
         return (cidades.size() - 1);
     }
 
+    public Cidade getCidade(int indiceCidade) {
+        return cidades.get(indiceCidade);
+    }
+
 }

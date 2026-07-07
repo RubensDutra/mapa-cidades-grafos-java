@@ -35,33 +35,53 @@ public class BuscaBFS {
 
 
         fila.add(indiceOrigem);
+
         cidadesVisitadas[indiceOrigem] = true;
+
         pais.put(indiceOrigem, -1);
 
+        boolean destinoEcontrado = false;
 
-        while (fila.size() > 0) {
+        while (destinoEcontrado || fila.isEmpty()) {
 
             int cidadeAtual = fila.remove();
 
             for (int i = 0; i < grafo.getQuantidadeCidades(); i++) {
 
-                if (grafo.existeEstrada(i, cidadeAtual)) {
+                if (grafo.existeEstrada(cidadeAtual, i)) {
 
                     if (!cidadesVisitadas[i]) {
 
                         cidadesVisitadas[i] = true;
-                        pais.put(i,cidadeAtual);
                         fila.add(i);
+                        pais.put(i,cidadeAtual);
+
+                        if (i == indiceDestino){
+                            destinoEcontrado = true;
+                        }
                     }
                 }
-
-
             }
+        }
+
+        int cidade = indiceDestino;
+
+        while (cidade != -1){
+
+            Cidade cidadeEncontrada = grafo.getCidade(cidade);
+
+            caminho.add(cidadeEncontrada);
+
+            cidade = pais.get(cidade);
 
         }
+
 
 
         return caminho;
     }
 
+    public void caminho(List<Cidade> cidades){
+
+    }
 }

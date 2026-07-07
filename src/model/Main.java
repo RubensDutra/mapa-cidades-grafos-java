@@ -26,6 +26,13 @@ public class Main {
 
         System.out.println("Exixtse?: " + estarda);
         grafo.imprimirMatriz();
+
+
+        boolean [] visita = new boolean[3];
+
+        for (int i = 0; i < visita.length; i++) {
+            System.out.println(visita[i]);
+        }
     }
 
 }
