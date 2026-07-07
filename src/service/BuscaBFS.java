@@ -33,6 +33,13 @@ public class BuscaBFS {
             return caminho;
         }
 
+        if (indiceOrigem == indiceDestino) {
+
+            Cidade cidade = grafo.getCidade(indiceOrigem);
+            caminho.add(cidade);
+
+            return caminho;
+        }
 
         fila.add(indiceOrigem);
 
@@ -46,7 +53,7 @@ public class BuscaBFS {
 
             int cidadeAtual = fila.remove();
 
-            for (int i = 0; i < grafo.getQuantidadeCidades(); i++) {
+            for (int i = 0; i < qntCidades; i++) {
 
                 if (grafo.existeEstrada(cidadeAtual, i)) {
 
