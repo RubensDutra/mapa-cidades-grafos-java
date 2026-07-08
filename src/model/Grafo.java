@@ -85,11 +85,12 @@ public class Grafo {
         if (cidades.isEmpty()) {
             return;
         }
+
         cidades.forEach(System.out::println);
     }
 
     public int getQuantidadeCidades() {
-        return (cidades.size() - 1);
+        return cidades.size();
     }
 
     public Cidade getCidade(int indiceCidade) {

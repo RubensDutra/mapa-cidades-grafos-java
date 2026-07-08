@@ -7,7 +7,6 @@ import java.util.*;
 
 public class BuscaBFS {
 
-
     public List<Cidade> buscaCaminho(Grafo grafo, String cidadeOrigem, String cidadeDestino) {
 
         int qntCidades = grafo.getQuantidadeCidades();
@@ -92,7 +91,4 @@ public class BuscaBFS {
         return caminho;
     }
 
-    public void caminho(List<Cidade> cidades) {
-
-    }
 }
