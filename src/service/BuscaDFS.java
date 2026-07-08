@@ -39,6 +39,54 @@ public class BuscaDFS {
             return caminho;
         }
 
+        pilha.push(indiceOrigem);
+        cidadesVisitadas[indiceOrigem] = true;
+        pais.put(indiceOrigem, -1);
+
+        boolean destinoEncontrado = false;
+
+        while (!destinoEncontrado && !pilha.isEmpty()) {
+
+            int cidadeAtual = pilha.pop();
+
+            for (int i = 0; i < qntCidades; i++) {
+
+                if (grafo.existeEstrada(cidadeAtual, i)) {
+
+                    if (!cidadesVisitadas[i]) {
+
+                        cidadesVisitadas[i] = true;
+
+                        pais.put(i, cidadeAtual);
+
+                        pilha.push(cidadeAtual);
+
+
+                        if (i == indiceDestino) {
+                            destinoEncontrado = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (!destinoEncontrado) {
+            return caminho;
+        }
+
+        int cidade = indiceDestino;
+
+        while (cidade != -1) {
+
+            Cidade cidadeEncontrada = grafo.getCidade(cidade);
+
+            caminho.add(cidadeEncontrada);
+
+            cidade = pais.get(cidade);
+
+        }
+
+        Collections.reverse(caminho);
 
         return caminho;
     }
