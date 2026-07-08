@@ -59,7 +59,7 @@ public class BuscaDFS {
 
                         pais.put(i, cidadeAtual);
 
-                        pilha.push(cidadeAtual);
+                        pilha.push(i);
 
 
                         if (i == indiceDestino) {

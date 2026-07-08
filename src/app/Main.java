@@ -10,7 +10,7 @@ import view.TelaPrincipal;
 public class Main {
     public static void main(String[] args) {
 
-        Grafo grafo = new Grafo(4);
+        Grafo grafo = new Grafo(7);
 
         BuscaBFS buscaBFS = new BuscaBFS();
         BuscaDFS buscaDFS = new BuscaDFS();

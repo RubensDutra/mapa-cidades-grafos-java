@@ -8,7 +8,10 @@ import service.BuscaBFS;
 import service.BuscaDFS;
 
 import javax.swing.*;
-import java.awt.*;
+
+import java.awt.GridLayout;
+
+import java.util.List;
 
 public class TelaPrincipal extends JPanel {
 
@@ -79,8 +82,8 @@ public class TelaPrincipal extends JPanel {
 
     private void configurarEventos() {
 
+        // Botão "Adicionar Cidade"
         painelCadastroCidade.getBtnAdicionarCidade().addActionListener(e -> {
-
             String nomeCidade = painelCadastroCidade
                     .getTxtCidade()
                     .getText()
@@ -98,15 +101,138 @@ public class TelaPrincipal extends JPanel {
 
             Cidade cidade = new Cidade(nomeCidade);
 
+            if (grafo.existeCidade(nomeCidade)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "Essa cidade já está cadastrada!"
+                );
+
+                return;
+            }
+
             grafo.adicionarCidade(cidade);
 
             atualizarListaCidades();
 
             painelCadastroCidade.getTxtCidade().setText("");
 
+            painelCadastroCidade.getTxtCidade().requestFocus();
         });
 
+        // Botão "Adicionar Estrada"
+        painelCadastroEstrada.getBtnAdicionarEstrada().addActionListener(e -> {
+
+            String cidadeOrigem = painelCadastroEstrada
+                    .getTxtOrigem()
+                    .getText()
+                    .trim();
+
+            String cidadeDestino = painelCadastroEstrada
+                    .getTxtDestino()
+                    .getText()
+                    .trim();
+
+            if (cidadeOrigem.isEmpty() || cidadeDestino.isEmpty()) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "Informe a cidade de origem e destino."
+                );
+
+                return;
+            }
+
+            grafo.adicionarEstrada(cidadeOrigem, cidadeDestino);
+
+            painelCadastroEstrada.getTxtOrigem().setText("");
+
+            painelCadastroEstrada.getTxtDestino().setText("");
+
+            painelCadastroEstrada.getTxtOrigem().requestFocus();
+
+        });
+
+        // Botão "Buscar BFS"
+        painelBusca.getBtnBuscarBFS().addActionListener(e -> {
+
+            String cidadeOrigem = painelBusca
+                    .getTxtOrigem()
+                    .getText()
+                    .trim();
+
+            String cidadeDestino = painelBusca
+                    .getTxtDestino()
+                    .getText()
+                    .trim();
+
+            if (cidadeOrigem.isEmpty() || cidadeDestino.isEmpty()) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "Informe a cidade de origem e destino."
+                );
+
+                return;
+            }
+
+            List<Cidade> caminho = buscaBFS.buscaCaminho(
+                    grafo,
+                    cidadeOrigem,
+                    cidadeDestino
+            );
+
+            mostrarResultado(caminho);
+
+            painelBusca.getTxtOrigem().setText("");
+
+            painelBusca.getTxtDestino().setText("");
+
+            painelBusca.getTxtOrigem().requestFocus();
+
+        });
+
+        // Botão "Buscar DFS"
+        painelBusca.getBtnBuscarDFS().addActionListener(e -> {
+
+                    String cidadeOrigem = painelBusca
+                            .getTxtOrigem()
+                            .getText()
+                            .trim();
+
+                    String cidadeDestino = painelBusca
+                            .getTxtDestino()
+                            .getText()
+                            .trim();
+
+                    if (cidadeOrigem.isEmpty() || cidadeDestino.isEmpty()) {
+
+                        JOptionPane.showMessageDialog(
+                                janela,
+                                "Informe a cidade de origem e destino."
+                        );
+
+                        return;
+                    }
+
+                    List<Cidade> caminho = buscaDFS.buscaCaminho(
+                            grafo,
+                            cidadeOrigem,
+                            cidadeDestino
+                    );
+
+                    mostrarResultado(caminho);
+
+                    painelBusca.getTxtOrigem().setText("");
+
+                    painelBusca.getTxtDestino().setText("");
+
+                    painelBusca.getTxtOrigem().requestFocus();
+
+                });
+
     }
+
 
     private void atualizarListaCidades() {
 
@@ -121,6 +247,40 @@ public class TelaPrincipal extends JPanel {
             area.append("\n");
 
         }
+
+    }
+
+    private void mostrarResultado(List<Cidade> caminho) {
+
+        JTextArea area = painelResultado.getTxtResultado();
+
+        area.setText("");
+
+        if (caminho.isEmpty()) {
+
+            area.setText("Nenhum caminho encontrado.");
+
+            return;
+        }
+
+
+        /*for (Cidade cidade : caminho) {
+
+            area.append(cidade.getNome());
+
+            area.append("\n");
+
+        }*/
+
+        for (int i = 0; i < caminho.size(); i++) {
+
+            area.append(caminho.get(i).getNome());
+
+            if (i < caminho.size() - 1) {
+                area.append(" → ");
+            }
+        }
+
 
     }
 
