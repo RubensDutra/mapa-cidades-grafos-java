@@ -1,5 +1,7 @@
-package model;
+package app;
 
+import model.Cidade;
+import model.Grafo;
 import service.BuscaBFS;
 import service.BuscaDFS;
 
