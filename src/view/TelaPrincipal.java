@@ -24,14 +24,15 @@ public class TelaPrincipal extends JPanel {
     private PainelResultado painelResultado;
     private PainelListaCidades painelLista;
 
-    public TelaPrincipal() {
+    public TelaPrincipal(Grafo grafo, BuscaBFS buscaBFS, BuscaDFS buscaDFS) {
+
+        this.grafo = grafo;
+        this.buscaBFS = buscaBFS;
+        this.buscaDFS = buscaDFS;
 
         configurarJanela();
-
         criarComponentes();
-
         organizarTela();
-
         configurarEventos();
 
         janela.setVisible(true);
@@ -51,8 +52,6 @@ public class TelaPrincipal extends JPanel {
     }
 
     private void criarComponentes() {
-
-        grafo = new Grafo(4);
 
         painelCadastroCidade = new PainelCadastroCidade();
         painelCadastroEstrada = new PainelCadastroEstrada();
