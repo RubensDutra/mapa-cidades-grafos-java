@@ -89,6 +89,11 @@ public class Grafo {
     }
 
     public boolean existeCidade(String nomeCidade) {
-        return buscarIndiceCidade(nomeCidade) != -1;
+
+        if (buscarIndiceCidade(nomeCidade) != -1){
+            return true;
+        }
+
+        return false;
     }
 }
