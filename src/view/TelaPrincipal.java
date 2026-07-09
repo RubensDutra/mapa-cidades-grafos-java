@@ -143,6 +143,16 @@ public class TelaPrincipal extends JPanel {
                 return;
             }
 
+            if (grafo.existeEstrada(cidadeOrigem, cidadeDestino)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "Essa estrada já está cadastrada."
+                );
+
+                return;
+            }
+
             grafo.adicionarEstrada(cidadeOrigem, cidadeDestino);
 
             painelCadastroEstrada.getTxtOrigem().setText("");
@@ -195,41 +205,41 @@ public class TelaPrincipal extends JPanel {
         // Botão "Buscar DFS"
         painelBusca.getBtnBuscarDFS().addActionListener(e -> {
 
-                    String cidadeOrigem = painelBusca
-                            .getTxtOrigem()
-                            .getText()
-                            .trim();
+            String cidadeOrigem = painelBusca
+                    .getTxtOrigem()
+                    .getText()
+                    .trim();
 
-                    String cidadeDestino = painelBusca
-                            .getTxtDestino()
-                            .getText()
-                            .trim();
+            String cidadeDestino = painelBusca
+                    .getTxtDestino()
+                    .getText()
+                    .trim();
 
-                    if (cidadeOrigem.isEmpty() || cidadeDestino.isEmpty()) {
+            if (cidadeOrigem.isEmpty() || cidadeDestino.isEmpty()) {
 
-                        JOptionPane.showMessageDialog(
-                                janela,
-                                "Informe a cidade de origem e destino."
-                        );
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "Informe a cidade de origem e destino."
+                );
 
-                        return;
-                    }
+                return;
+            }
 
-                    List<Cidade> caminho = buscaDFS.buscaCaminho(
-                            grafo,
-                            cidadeOrigem,
-                            cidadeDestino
-                    );
+            List<Cidade> caminho = buscaDFS.buscaCaminho(
+                    grafo,
+                    cidadeOrigem,
+                    cidadeDestino
+            );
 
-                    mostrarResultado(caminho);
+            mostrarResultado(caminho);
 
-                    painelBusca.getTxtOrigem().setText("");
+            painelBusca.getTxtOrigem().setText("");
 
-                    painelBusca.getTxtDestino().setText("");
+            painelBusca.getTxtDestino().setText("");
 
-                    painelBusca.getTxtOrigem().requestFocus();
+            painelBusca.getTxtOrigem().requestFocus();
 
-                });
+        });
 
     }
 
