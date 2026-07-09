@@ -5,7 +5,7 @@ import model.Grafo;
 
 import java.util.*;
 
-public class BuscaBFS {
+public class BuscaBFS implements Busca {
 
     public List<Cidade> buscaCaminho(Grafo grafo, String cidadeOrigem, String cidadeDestino) {
 

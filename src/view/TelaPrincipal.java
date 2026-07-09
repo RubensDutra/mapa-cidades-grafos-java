@@ -4,6 +4,7 @@ package view;
 import model.Grafo;
 import model.Cidade;
 
+import service.Busca;
 import service.BuscaBFS;
 import service.BuscaDFS;
 
@@ -196,134 +197,81 @@ public class TelaPrincipal extends JPanel {
         });
 
         // Botão "Buscar BFS"
-        painelBusca.getBtnBuscarBFS().addActionListener(e -> {
-
-            String cidadeOrigem = painelBusca
-                    .getTxtOrigem()
-                    .getText()
-                    .trim();
-
-            String cidadeDestino = painelBusca
-                    .getTxtDestino()
-                    .getText()
-                    .trim();
-
-            if (cidadeOrigem.isEmpty()) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Informe a cidade de origem."
-                );
-
-                return;
-            }
-
-            if (!grafo.existeCidade(cidadeOrigem)) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "A cidade de origem não está cadastrada."
-                );
-
-                return;
-            }
-
-            if (!grafo.existeCidade(cidadeDestino)) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "A cidade de destino não está cadastrada."
-                );
-
-                return;
-            }
-
-
-            List<Cidade> caminho = buscaBFS.buscaCaminho(
-                    grafo,
-                    cidadeOrigem,
-                    cidadeDestino
-            );
-
-            mostrarResultado(caminho);
-
-            painelBusca.getTxtOrigem().setText("");
-
-            painelBusca.getTxtDestino().setText("");
-
-            painelBusca.getTxtOrigem().requestFocus();
-
-        });
+        painelBusca.getBtnBuscarBFS().addActionListener(e ->
+                realizarBusca(buscaBFS)
+        );
 
         // Botão "Buscar DFS"
-        painelBusca.getBtnBuscarDFS().addActionListener(e -> {
+        painelBusca.getBtnBuscarDFS().addActionListener(e ->
+                realizarBusca(buscaDFS)
+        );
+    }
 
-            String cidadeOrigem = painelBusca
-                    .getTxtOrigem()
-                    .getText()
-                    .trim();
+    private void realizarBusca(Busca busca) {
 
-            String cidadeDestino = painelBusca
-                    .getTxtDestino()
-                    .getText()
-                    .trim();
+        String cidadeOrigem = painelBusca
+                .getTxtOrigem()
+                .getText()
+                .trim();
 
-            if (cidadeOrigem.isEmpty()) {
+        String cidadeDestino = painelBusca
+                .getTxtDestino()
+                .getText()
+                .trim();
 
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Informe a cidade de origem."
-                );
+        if (cidadeOrigem.isEmpty()) {
 
-                return;
-            }
-
-            if (cidadeDestino.isEmpty()) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Informe a cidade de destino."
-                );
-
-                return;
-            }
-
-            if (!grafo.existeCidade(cidadeOrigem)) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "A cidade de origem não está cadastrada."
-                );
-
-                return;
-            }
-
-            if (!grafo.existeCidade(cidadeDestino)) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "A cidade de destino não está cadastrada."
-                );
-
-                return;
-            }
-            List<Cidade> caminho = buscaDFS.buscaCaminho(
-                    grafo,
-                    cidadeOrigem,
-                    cidadeDestino
+            JOptionPane.showMessageDialog(
+                    janela,
+                    "Informe a cidade de origem."
             );
 
-            mostrarResultado(caminho);
+            return;
+        }
 
-            painelBusca.getTxtOrigem().setText("");
+        if (cidadeDestino.isEmpty()) {
 
-            painelBusca.getTxtDestino().setText("");
+            JOptionPane.showMessageDialog(
+                    janela,
+                    "Informe a cidade de destino."
+            );
 
-            painelBusca.getTxtOrigem().requestFocus();
+            return;
+        }
 
-        });
+        if (!grafo.existeCidade(cidadeOrigem)) {
 
+            JOptionPane.showMessageDialog(
+                    janela,
+                    "A cidade de origem não está cadastrada."
+            );
+
+            return;
+        }
+
+        if (!grafo.existeCidade(cidadeDestino)) {
+
+            JOptionPane.showMessageDialog(
+                    janela,
+                    "A cidade de destino não está cadastrada."
+            );
+
+            return;
+        }
+
+        List<Cidade> caminho = busca.buscaCaminho(
+                grafo,
+                cidadeOrigem,
+                cidadeDestino
+        );
+
+        mostrarResultado(caminho);
+
+        painelBusca.getTxtOrigem().setText("");
+        painelBusca.getTxtDestino().setText("");
+        painelBusca.getTxtOrigem().requestFocus();
     }
+
 
 
     private void atualizarListaCidades() {

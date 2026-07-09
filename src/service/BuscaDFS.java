@@ -5,7 +5,7 @@ import model.Grafo;
 
 import java.util.*;
 
-public class BuscaDFS {
+public class BuscaDFS implements Busca {
 
     public List<Cidade> buscaCaminho(Grafo grafo, String cidadeOrigem, String cidadeDestino) {
 

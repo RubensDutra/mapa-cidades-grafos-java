@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/service/Busca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/BuscaBFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BuscaBFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/BuscaDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BuscaDFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +63,7 @@
       <recent name="C:\Users\ruben\OneDrive\Área de Trabalho\IFMA - UNOPAR (2025)\SOFTWARE ADS\PROGRAMAÇÃO 1\Intellij java\PROGRAMAS CRIADOS\mapa-cidades-grafos-java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="service" />
       <recent name="view" />
     </key>
   </component>
@@ -121,6 +127,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
+          <line>292</line>
+          <properties class="view.TelaPrincipal" method="mostrarResultado">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
