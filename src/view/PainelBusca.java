@@ -21,15 +21,11 @@ public class PainelBusca extends JPanel {
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
         lblOrigem = new JLabel("Origem:");
-
-        txtOrigem = new JTextField(15);
-
+        txtOrigem = new JTextField(20);
         lblDestino = new JLabel("Destino:");
 
-        txtDestino = new JTextField(15);
-
+        txtDestino = new JTextField(20);
         btnBuscarBFS = new JButton("Buscar BFS");
-
         btnBuscarDFS = new JButton("Buscar DFS");
 
         add(lblOrigem);

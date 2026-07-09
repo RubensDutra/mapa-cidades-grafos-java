@@ -11,7 +11,7 @@ public class PainelCadastroCidade extends JPanel {
 
     public PainelCadastroCidade() {
 
-        setBorder(BorderFactory.createTitledBorder("Cadastro de Cidade"));
+        setBorder(BorderFactory.createTitledBorder("Cadastro de Cidades"));
 
         setLayout(new FlowLayout(FlowLayout.LEFT));
 

@@ -21,11 +21,11 @@ public class PainelCadastroEstrada extends  JPanel{
 
         lblOrigem = new JLabel("Origem:");
 
-        txtOrigem = new JTextField(15);
+        txtOrigem = new JTextField(20);
 
         lblDestino = new JLabel("Destino:");
 
-        txtDestino = new JTextField(15);
+        txtDestino = new JTextField(20);
 
         btnAdicionarEstrada = new JButton("Adicionar Estrada");
 
