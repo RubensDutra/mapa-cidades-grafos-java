@@ -208,15 +208,36 @@ public class TelaPrincipal extends JPanel {
                     .getText()
                     .trim();
 
-            if (cidadeOrigem.isEmpty() || cidadeDestino.isEmpty()) {
+            if (cidadeOrigem.isEmpty()) {
 
                 JOptionPane.showMessageDialog(
                         janela,
-                        "Informe a cidade de origem e destino."
+                        "Informe a cidade de origem."
                 );
 
                 return;
             }
+
+            if (!grafo.existeCidade(cidadeOrigem)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "A cidade de origem não está cadastrada."
+                );
+
+                return;
+            }
+
+            if (!grafo.existeCidade(cidadeDestino)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "A cidade de destino não está cadastrada."
+                );
+
+                return;
+            }
+
 
             List<Cidade> caminho = buscaBFS.buscaCaminho(
                     grafo,
@@ -247,16 +268,45 @@ public class TelaPrincipal extends JPanel {
                     .getText()
                     .trim();
 
-            if (cidadeOrigem.isEmpty() || cidadeDestino.isEmpty()) {
+            if (cidadeOrigem.isEmpty()) {
 
                 JOptionPane.showMessageDialog(
                         janela,
-                        "Informe a cidade de origem e destino."
+                        "Informe a cidade de origem."
                 );
 
                 return;
             }
 
+            if (cidadeDestino.isEmpty()) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "Informe a cidade de destino."
+                );
+
+                return;
+            }
+
+            if (!grafo.existeCidade(cidadeOrigem)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "A cidade de origem não está cadastrada."
+                );
+
+                return;
+            }
+
+            if (!grafo.existeCidade(cidadeDestino)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "A cidade de destino não está cadastrada."
+                );
+
+                return;
+            }
             List<Cidade> caminho = buscaDFS.buscaCaminho(
                     grafo,
                     cidadeOrigem,
@@ -305,14 +355,7 @@ public class TelaPrincipal extends JPanel {
             return;
         }
 
-
-        /*for (Cidade cidade : caminho) {
-
-            area.append(cidade.getNome());
-
-            area.append("\n");
-
-        }*/
+        area.setText("Caminho encontrado.");
 
         for (int i = 0; i < caminho.size(); i++) {
 
