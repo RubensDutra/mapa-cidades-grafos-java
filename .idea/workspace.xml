@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/view/PainelCadastroCidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelCadastroCidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Busca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Busca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,12 +128,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>292</line>
-          <properties class="view.TelaPrincipal" method="mostrarResultado">
+          <line>302</line>
+          <properties class="view.TelaPrincipal" method="atualizarListaCidades">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
+          <line>69</line>
+          <properties class="view.TelaPrincipal" method="organizarTela">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
+          <line>29</line>
+          <properties class="view.TelaPrincipal" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -71,14 +71,6 @@ public class Grafo {
         return existeEstrada(origem, destino);
     }
 
-    public void listarCidades() {
-
-        if (cidades.isEmpty()) {
-            return;
-        }
-
-        cidades.forEach(System.out::println);
-    }
 
     public int getQuantidadeCidades() {
         return cidades.size();

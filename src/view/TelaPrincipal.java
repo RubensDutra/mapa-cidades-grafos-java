@@ -1,6 +1,5 @@
 package view;
 
-
 import model.Grafo;
 import model.Cidade;
 
@@ -45,13 +44,16 @@ public class TelaPrincipal extends JPanel {
 
     private void configurarJanela() {
 
-        janela = new JFrame("Mapa de Cidades");
-
-        janela.setSize(900, 700);
+        janela = new JFrame("Sistema de Mapeamento de Cidades");
 
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        janela.setSize(900, 700);
+
         janela.setLocationRelativeTo(null);
+
+        janela.setResizable(true);
+
 
     }
 
@@ -78,6 +80,97 @@ public class TelaPrincipal extends JPanel {
         janela.add(painelResultado);
 
         janela.add(painelLista);
+
+    }
+
+    private void realizarBusca(Busca busca) {
+
+        String cidadeOrigem = painelBusca
+                .getTxtOrigem()
+                .getText()
+                .trim();
+
+        String cidadeDestino = painelBusca
+                .getTxtDestino()
+                .getText()
+                .trim();
+
+        if (cidadeOrigem.isEmpty()) {
+
+            JOptionPane.showMessageDialog(
+                    janela,
+                    "Informe a cidade de origem."
+            );
+
+            return;
+        }
+
+        if (cidadeDestino.isEmpty()) {
+
+            JOptionPane.showMessageDialog(
+                    janela,
+                    "Informe a cidade de destino."
+            );
+
+            return;
+        }
+
+        if (!grafo.existeCidade(cidadeOrigem)) {
+
+            JOptionPane.showMessageDialog(
+                    janela,
+                    "A cidade de origem não está cadastrada."
+            );
+
+            return;
+        }
+
+        if (!grafo.existeCidade(cidadeDestino)) {
+
+            JOptionPane.showMessageDialog(
+                    janela,
+                    "A cidade de destino não está cadastrada."
+            );
+
+            return;
+        }
+
+        List<Cidade> caminho = busca.buscaCaminho(
+                grafo,
+                cidadeOrigem,
+                cidadeDestino
+        );
+
+        mostrarResultado(caminho);
+
+        painelBusca.getTxtOrigem().setText("");
+        painelBusca.getTxtDestino().setText("");
+        painelBusca.getTxtOrigem().requestFocus();
+    }
+
+    private void mostrarResultado(List<Cidade> caminho) {
+
+        JTextArea area = painelResultado.getTxtResultado();
+
+        area.setText("");
+
+        if (caminho.isEmpty()) {
+
+            area.setText("Nenhum caminho encontrado.");
+
+            return;
+        }
+
+        area.setText("Caminho encontrado.");
+
+        for (int i = 0; i < caminho.size(); i++) {
+
+            area.append(caminho.get(i).getNome());
+
+            if (i < caminho.size() - 1) {
+                area.append(" → ");
+            }
+        }
 
     }
 
@@ -207,73 +300,6 @@ public class TelaPrincipal extends JPanel {
         );
     }
 
-    private void realizarBusca(Busca busca) {
-
-        String cidadeOrigem = painelBusca
-                .getTxtOrigem()
-                .getText()
-                .trim();
-
-        String cidadeDestino = painelBusca
-                .getTxtDestino()
-                .getText()
-                .trim();
-
-        if (cidadeOrigem.isEmpty()) {
-
-            JOptionPane.showMessageDialog(
-                    janela,
-                    "Informe a cidade de origem."
-            );
-
-            return;
-        }
-
-        if (cidadeDestino.isEmpty()) {
-
-            JOptionPane.showMessageDialog(
-                    janela,
-                    "Informe a cidade de destino."
-            );
-
-            return;
-        }
-
-        if (!grafo.existeCidade(cidadeOrigem)) {
-
-            JOptionPane.showMessageDialog(
-                    janela,
-                    "A cidade de origem não está cadastrada."
-            );
-
-            return;
-        }
-
-        if (!grafo.existeCidade(cidadeDestino)) {
-
-            JOptionPane.showMessageDialog(
-                    janela,
-                    "A cidade de destino não está cadastrada."
-            );
-
-            return;
-        }
-
-        List<Cidade> caminho = busca.buscaCaminho(
-                grafo,
-                cidadeOrigem,
-                cidadeDestino
-        );
-
-        mostrarResultado(caminho);
-
-        painelBusca.getTxtOrigem().setText("");
-        painelBusca.getTxtDestino().setText("");
-        painelBusca.getTxtOrigem().requestFocus();
-    }
-
-
-
     private void atualizarListaCidades() {
 
         JTextArea area = painelLista.getTxtLista();
@@ -286,32 +312,6 @@ public class TelaPrincipal extends JPanel {
 
             area.append("\n");
 
-        }
-
-    }
-
-    private void mostrarResultado(List<Cidade> caminho) {
-
-        JTextArea area = painelResultado.getTxtResultado();
-
-        area.setText("");
-
-        if (caminho.isEmpty()) {
-
-            area.setText("Nenhum caminho encontrado.");
-
-            return;
-        }
-
-        area.setText("Caminho encontrado.");
-
-        for (int i = 0; i < caminho.size(); i++) {
-
-            area.append(caminho.get(i).getNome());
-
-            if (i < caminho.size() - 1) {
-                area.append(" → ");
-            }
         }
 
     }
