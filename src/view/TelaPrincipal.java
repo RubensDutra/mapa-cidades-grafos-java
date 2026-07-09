@@ -314,7 +314,6 @@ public class TelaPrincipal extends JPanel {
             }
         }
 
-
     }
 
 }
