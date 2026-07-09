@@ -143,6 +143,16 @@ public class TelaPrincipal extends JPanel {
                 return;
             }
 
+            if (cidadeOrigem.equalsIgnoreCase(cidadeDestino)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "A cidade de origem deve ser diferente da cidade de destino."
+                );
+
+                return;
+            }
+
             if (grafo.existeEstrada(cidadeOrigem, cidadeDestino)) {
 
                 JOptionPane.showMessageDialog(
