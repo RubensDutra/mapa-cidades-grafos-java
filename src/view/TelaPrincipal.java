@@ -143,6 +143,26 @@ public class TelaPrincipal extends JPanel {
                 return;
             }
 
+            if (!grafo.existeCidade(cidadeOrigem)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "Cidade de origem não existe."
+                );
+
+                return;
+            }
+
+            if (!grafo.existeCidade(cidadeDestino)) {
+
+                JOptionPane.showMessageDialog(
+                        janela,
+                        "Cidade de destino não existe."
+                );
+
+                return;
+            }
+
             if (cidadeOrigem.equalsIgnoreCase(cidadeDestino)) {
 
                 JOptionPane.showMessageDialog(
@@ -164,12 +184,14 @@ public class TelaPrincipal extends JPanel {
             }
 
             grafo.adicionarEstrada(cidadeOrigem, cidadeDestino);
+            JOptionPane.showMessageDialog(janela, "Estrada cadastrada com sucesso!");
 
             painelCadastroEstrada.getTxtOrigem().setText("");
 
             painelCadastroEstrada.getTxtDestino().setText("");
 
             painelCadastroEstrada.getTxtOrigem().requestFocus();
+
 
         });
 
