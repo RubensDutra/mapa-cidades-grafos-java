@@ -16,9 +16,7 @@ public class PainelCadastroCidade extends JPanel {
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
         lblCidade = new JLabel("Nome:");
-
         txtCidade = new JTextField(20);
-
         btnAdicionarCidade = new JButton("Adicionar Cidade");
 
         add(lblCidade);

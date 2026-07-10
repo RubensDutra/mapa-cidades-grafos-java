@@ -1,5 +1,6 @@
 package view;
 
+
 import model.Grafo;
 import model.Cidade;
 
@@ -155,13 +156,11 @@ public class TelaPrincipal extends JPanel {
         area.setText("");
 
         if (caminho.isEmpty()) {
-
             area.setText("Nenhum caminho encontrado.");
-
             return;
         }
 
-        area.setText("Caminho encontrado.");
+        area.setText("Caminho encontrado: \n");
 
         for (int i = 0; i < caminho.size(); i++) {
 
@@ -178,6 +177,7 @@ public class TelaPrincipal extends JPanel {
 
         // Botão "Adicionar Cidade"
         painelCadastroCidade.getBtnAdicionarCidade().addActionListener(e -> {
+
             String nomeCidade = painelCadastroCidade
                     .getTxtCidade()
                     .getText()

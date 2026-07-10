@@ -10,11 +10,9 @@ public class PainelListaCidades extends JPanel {
     public PainelListaCidades() {
 
         setBorder(BorderFactory.createTitledBorder("Cidades Cadastradas"));
-
         setLayout(new BorderLayout());
 
         txtLista = new JTextArea(8,40);
-
         txtLista.setEditable(false);
 
         JScrollPane scroll = new JScrollPane(txtLista);

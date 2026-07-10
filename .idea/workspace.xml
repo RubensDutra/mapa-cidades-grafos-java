@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/model/Cidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/model/Cidade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/model/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/model/Grafo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Busca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Busca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/BuscaBFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BuscaBFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/BuscaDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BuscaDFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PainelCadastroCidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelCadastroCidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PainelCadastroEstrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelCadastroEstrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PainelListaCidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelListaCidades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +144,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>69</line>
+          <line>70</line>
           <properties class="view.TelaPrincipal" method="organizarTela">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -146,7 +153,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>29</line>
+          <line>30</line>
           <properties class="view.TelaPrincipal" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

@@ -45,9 +45,14 @@ public class BuscaDFS implements Busca {
 
         boolean destinoEncontrado = false;
 
-        while (!destinoEncontrado && !pilha.isEmpty()) {
+        while (!pilha.isEmpty()) {
 
             int cidadeAtual = pilha.pop();
+
+            if (cidadeAtual == indiceDestino) {
+                destinoEncontrado = true;
+                break;
+            }
 
             for (int i = 0; i < qntCidades; i++) {
 
@@ -61,10 +66,6 @@ public class BuscaDFS implements Busca {
 
                         pilha.push(i);
 
-
-                        if (i == indiceDestino) {
-                            destinoEncontrado = true;
-                        }
                     }
                 }
             }

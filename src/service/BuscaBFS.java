@@ -48,9 +48,14 @@ public class BuscaBFS implements Busca {
 
         boolean destinoEncontrado = false;
 
-        while (!destinoEncontrado && !fila.isEmpty()) {
+        while (!fila.isEmpty()) {
 
             int cidadeAtual = fila.remove();
+
+            if (cidadeAtual == indiceDestino) {
+                destinoEncontrado = true;
+                break;
+            }
 
             for (int i = 0; i < qntCidades; i++) {
 
@@ -62,9 +67,6 @@ public class BuscaBFS implements Busca {
                         fila.add(i);
                         pais.put(i, cidadeAtual);
 
-                        if (i == indiceDestino) {
-                            destinoEncontrado = true;
-                        }
                     }
                 }
             }
