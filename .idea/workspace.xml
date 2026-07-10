@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/exception/CidadeDuplicadaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exception/CidadeInvalidaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exception/CidadeNaoEncontradaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exception/EstradaDuplicadaException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/model/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/model/Grafo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Grafo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -58,6 +68,7 @@
       <recent name="C:\Users\ruben\OneDrive\Área de Trabalho\IFMA - UNOPAR (2025)\SOFTWARE ADS\PROGRAMAÇÃO 1\Intellij java\PROGRAMAS CRIADOS\mapa-cidades-grafos-java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="exception" />
       <recent name="service" />
       <recent name="view" />
     </key>
@@ -116,7 +127,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/model/Grafo.java</url>
-          <line>15</line>
+          <line>20</line>
           <properties class="model.Grafo" method="adicionarCidade">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -125,7 +136,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>302</line>
+          <line>237</line>
           <properties class="view.TelaPrincipal" method="atualizarListaCidades">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -134,7 +145,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>70</line>
+          <line>78</line>
           <properties class="view.TelaPrincipal" method="organizarTela">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -143,7 +154,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>30</line>
+          <line>34</line>
           <properties class="view.TelaPrincipal" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

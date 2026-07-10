@@ -26,6 +26,9 @@ do curso de Análise e Desenvolvimento de Sistemas.
 - Java 21
 - Java Swing
 - IntelliJ IDEA
+- Programação Orientada a Objetos
+- Estrutura de Dados
+- Grafos
 - Git
 - GitHub
 
@@ -38,6 +41,12 @@ src
 │
 ├── app
 │   └── Main.java
+│
+├── exception
+│   ├── CidadeDuplicadaException.java
+│   ├── CidadeInvalidaException.java
+│   ├── CidadeNaoEncontradaException.java
+│   └── EstradaDuplicadaException.java
 │
 ├── model
 │   ├── Cidade.java
@@ -58,6 +67,15 @@ src
 ```
 
 ---
+## Tratamento de Exceções
+
+O projeto utiliza exceções personalizadas para validação das regras de negócio:
+
+- CidadeDuplicadaException
+- CidadeNaoEncontradaException
+- EstradaDuplicadaException
+- CidadeInvalidaException
+---
 
 ## Funcionalidades
 
@@ -76,7 +94,6 @@ src
 ### Breadth-First Search (BFS)
 
 A busca em largura percorre o grafo nível por nível, garantindo encontrar o menor caminho em quantidade de arestas.
-
 Estrutura utilizada:
 
 - Queue (Fila)
@@ -86,7 +103,6 @@ Estrutura utilizada:
 ### Depth-First Search (DFS)
 
 A busca em profundidade percorre um caminho até o final antes de retornar para explorar outras possibilidades.
-
 Estrutura utilizada:
 
 - Stack (Pilha)

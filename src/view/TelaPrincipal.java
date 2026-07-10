@@ -1,6 +1,10 @@
 package view;
 
 
+import exception.CidadeDuplicadaException;
+import exception.CidadeInvalidaException;
+import exception.CidadeNaoEncontradaException;
+import exception.EstradaDuplicadaException;
 import model.Grafo;
 import model.Cidade;
 
@@ -61,9 +65,13 @@ public class TelaPrincipal extends JPanel {
     private void criarComponentes() {
 
         painelCadastroCidade = new PainelCadastroCidade();
+
         painelCadastroEstrada = new PainelCadastroEstrada();
+
         painelBusca = new PainelBusca();
+
         painelResultado = new PainelResultado();
+
         painelLista = new PainelListaCidades();
 
     }
@@ -97,42 +105,22 @@ public class TelaPrincipal extends JPanel {
                 .trim();
 
         if (cidadeOrigem.isEmpty()) {
-
-            JOptionPane.showMessageDialog(
-                    janela,
-                    "Informe a cidade de origem."
-            );
-
+            JOptionPane.showMessageDialog(janela, "Informe a cidade de origem.");
             return;
         }
 
         if (cidadeDestino.isEmpty()) {
-
-            JOptionPane.showMessageDialog(
-                    janela,
-                    "Informe a cidade de destino."
-            );
-
+            JOptionPane.showMessageDialog(janela, "Informe a cidade de destino.");
             return;
         }
 
         if (!grafo.existeCidade(cidadeOrigem)) {
-
-            JOptionPane.showMessageDialog(
-                    janela,
-                    "A cidade de origem não está cadastrada."
-            );
-
+            JOptionPane.showMessageDialog(janela, "A cidade de origem não está cadastrada.");
             return;
         }
 
         if (!grafo.existeCidade(cidadeDestino)) {
-
-            JOptionPane.showMessageDialog(
-                    janela,
-                    "A cidade de destino não está cadastrada."
-            );
-
+            JOptionPane.showMessageDialog(janela,"A cidade de destino não está cadastrada.");
             return;
         }
 
@@ -183,35 +171,23 @@ public class TelaPrincipal extends JPanel {
                     .getText()
                     .trim();
 
-            if (nomeCidade.isEmpty()) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Digite o nome da cidade."
-                );
-
+            if (nomeCidade.isEmpty()) {JOptionPane.showMessageDialog(janela, "Digite o nome da cidade.");
                 return;
             }
 
             Cidade cidade = new Cidade(nomeCidade);
 
-            if (grafo.existeCidade(nomeCidade)) {
+            try {
 
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Essa cidade já está cadastrada!"
-                );
+                grafo.adicionarCidade(cidade);
+                atualizarListaCidades();
+                painelCadastroCidade.getTxtCidade().setText("");
+                painelCadastroCidade.getTxtCidade().requestFocus();
 
-                return;
+            } catch (CidadeDuplicadaException ex) {
+                JOptionPane.showMessageDialog(janela, ex.getMessage());
             }
 
-            grafo.adicionarCidade(cidade);
-
-            atualizarListaCidades();
-
-            painelCadastroCidade.getTxtCidade().setText("");
-
-            painelCadastroCidade.getTxtCidade().requestFocus();
         });
 
         // Botão "Adicionar Estrada"
@@ -228,64 +204,23 @@ public class TelaPrincipal extends JPanel {
                     .trim();
 
             if (cidadeOrigem.isEmpty() || cidadeDestino.isEmpty()) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Informe a cidade de origem e destino."
-                );
-
+                JOptionPane.showMessageDialog(janela, "Informe a cidade de origem e destino.");
                 return;
             }
 
-            if (!grafo.existeCidade(cidadeOrigem)) {
 
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Cidade de origem não existe."
-                );
+            try {
+                grafo.adicionarEstrada(cidadeOrigem, cidadeDestino);
 
-                return;
+                JOptionPane.showMessageDialog(janela, "Estrada cadastrada com sucesso!");
+
+                painelCadastroEstrada.getTxtOrigem().setText("");
+                painelCadastroEstrada.getTxtDestino().setText("");
+                painelCadastroEstrada.getTxtOrigem().requestFocus();
+
+            } catch (CidadeNaoEncontradaException | EstradaDuplicadaException | CidadeInvalidaException ex) {
+                JOptionPane.showMessageDialog(janela, ex.getMessage());
             }
-
-            if (!grafo.existeCidade(cidadeDestino)) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Cidade de destino não existe."
-                );
-
-                return;
-            }
-
-            if (cidadeOrigem.equalsIgnoreCase(cidadeDestino)) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "A cidade de origem deve ser diferente da cidade de destino."
-                );
-
-                return;
-            }
-
-            if (grafo.existeEstrada(cidadeOrigem, cidadeDestino)) {
-
-                JOptionPane.showMessageDialog(
-                        janela,
-                        "Essa estrada já está cadastrada."
-                );
-
-                return;
-            }
-
-            grafo.adicionarEstrada(cidadeOrigem, cidadeDestino);
-            JOptionPane.showMessageDialog(janela, "Estrada cadastrada com sucesso!");
-
-            painelCadastroEstrada.getTxtOrigem().setText("");
-
-            painelCadastroEstrada.getTxtDestino().setText("");
-
-            painelCadastroEstrada.getTxtOrigem().requestFocus();
-
 
         });
 

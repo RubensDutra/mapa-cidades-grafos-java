@@ -1,5 +1,10 @@
 package model;
 
+import exception.CidadeDuplicadaException;
+import exception.CidadeInvalidaException;
+import exception.CidadeNaoEncontradaException;
+import exception.EstradaDuplicadaException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +19,11 @@ public class Grafo {
     }
 
     public void adicionarCidade(Cidade novaCidade) {
+
+        if (existeCidade(novaCidade.getNome())) {
+            throw new CidadeDuplicadaException("Essa cidade já está cadastrada.");
+        }
+
         cidades.add(novaCidade);
     }
 
@@ -37,14 +47,27 @@ public class Grafo {
 
     public void adicionarEstrada(String cidadeOrigem, String cidadeDestino) {
 
+        if (cidadeOrigem.equalsIgnoreCase(cidadeDestino)) {
+            throw new CidadeInvalidaException("A cidade de origem deve ser diferente da cidade de destino.");
+        }
+
         int origem = buscarIndiceCidade(cidadeOrigem);
         int destino = buscarIndiceCidade(cidadeDestino);
 
-        if (origem != -1 && destino != -1) {
-            matrizAdjacente[origem][destino] = true;
-            matrizAdjacente[destino][origem] = true;
+        if (origem == -1) {
+            throw new CidadeNaoEncontradaException("Cidade de origem não existe.");
         }
 
+        if (destino == -1) {
+            throw new CidadeNaoEncontradaException("Cidade de destino não existe.");
+        }
+
+        if (existeEstrada(origem, destino)) {
+            throw new EstradaDuplicadaException("Essa estrada já está cadastrada.");
+        }
+
+        matrizAdjacente[origem][destino] = true;
+        matrizAdjacente[destino][origem] = true;
     }
 
     public boolean existeEstrada(int cidadeOrigem, int cidadeDestino) {
@@ -60,15 +83,6 @@ public class Grafo {
         }
 
         return matrizAdjacente[cidadeOrigem][cidadeDestino];
-    }
-
-
-    public boolean existeEstrada(String cidadeOrigem, String cidadeDestino) {
-
-        int origem = buscarIndiceCidade(cidadeOrigem);
-        int destino = buscarIndiceCidade(cidadeDestino);
-
-        return existeEstrada(origem, destino);
     }
 
 
