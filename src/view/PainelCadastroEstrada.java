@@ -5,13 +5,10 @@ import java.awt.*;
 
 public class PainelCadastroEstrada extends  JPanel{
 
-    private JLabel lblOrigem;
-    private JLabel lblDestino;
+    private final JTextField txtOrigem;
+    private final JTextField txtDestino;
 
-    private JTextField txtOrigem;
-    private JTextField txtDestino;
-
-    private JButton btnAdicionarEstrada;
+    private final JButton btnAdicionarEstrada;
 
     public PainelCadastroEstrada() {
 
@@ -19,10 +16,10 @@ public class PainelCadastroEstrada extends  JPanel{
 
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        lblOrigem = new JLabel("Origem:");
+        JLabel lblOrigem = new JLabel("Origem:");
         txtOrigem = new JTextField(20);
 
-        lblDestino = new JLabel("Destino:");
+        JLabel lblDestino = new JLabel("Destino:");
         txtDestino = new JTextField(20);
 
         btnAdicionarEstrada = new JButton("Adicionar Estrada");

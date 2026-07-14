@@ -5,9 +5,8 @@ import java.awt.*;
 
 public class PainelCadastroCidade extends JPanel {
 
-    private JLabel lblCidade;
-    private JTextField txtCidade;
-    private JButton btnAdicionarCidade;
+    private final JTextField txtCidade;
+    private final JButton btnAdicionarCidade;
 
     public PainelCadastroCidade() {
 
@@ -15,7 +14,7 @@ public class PainelCadastroCidade extends JPanel {
 
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        lblCidade = new JLabel("Nome:");
+        JLabel lblCidade = new JLabel("Nome:");
         txtCidade = new JTextField(20);
         btnAdicionarCidade = new JButton("Adicionar Cidade");
 

@@ -5,6 +5,7 @@ import exception.CidadeDuplicadaException;
 import exception.CidadeInvalidaException;
 import exception.CidadeNaoEncontradaException;
 import exception.EstradaDuplicadaException;
+
 import model.Grafo;
 import model.Cidade;
 
@@ -22,9 +23,9 @@ public class TelaPrincipal extends JPanel {
 
     private JFrame janela;
 
-    private Grafo grafo;
-    private BuscaBFS buscaBFS;
-    private BuscaDFS buscaDFS;
+    private final Grafo grafo;
+    private final BuscaBFS buscaBFS;
+    private final BuscaDFS buscaDFS;
 
     private PainelCadastroCidade painelCadastroCidade;
     private PainelCadastroEstrada painelCadastroEstrada;
@@ -39,8 +40,11 @@ public class TelaPrincipal extends JPanel {
         this.buscaDFS = buscaDFS;
 
         configurarJanela();
+
         criarComponentes();
+
         organizarTela();
+
         configurarEventos();
 
         janela.setVisible(true);
@@ -92,13 +96,13 @@ public class TelaPrincipal extends JPanel {
 
     }
 
+    // PROMPT 09 parte gerada pela IA
     private void realizarBusca(Busca busca) {
 
         String cidadeOrigem = painelBusca
                 .getTxtOrigem()
                 .getText()
                 .trim();
-
         String cidadeDestino = painelBusca
                 .getTxtDestino()
                 .getText()
@@ -120,7 +124,7 @@ public class TelaPrincipal extends JPanel {
         }
 
         if (!grafo.existeCidade(cidadeDestino)) {
-            JOptionPane.showMessageDialog(janela,"A cidade de destino não está cadastrada.");
+            JOptionPane.showMessageDialog(janela, "A cidade de destino não está cadastrada.");
             return;
         }
 
@@ -171,7 +175,8 @@ public class TelaPrincipal extends JPanel {
                     .getText()
                     .trim();
 
-            if (nomeCidade.isEmpty()) {JOptionPane.showMessageDialog(janela, "Digite o nome da cidade.");
+            if (nomeCidade.isEmpty()) {
+                JOptionPane.showMessageDialog(janela, "Digite o nome da cidade.");
                 return;
             }
 
@@ -223,6 +228,7 @@ public class TelaPrincipal extends JPanel {
             }
 
         });
+
 
         // Botão "Buscar BFS"
         painelBusca.getBtnBuscarBFS().addActionListener(e ->

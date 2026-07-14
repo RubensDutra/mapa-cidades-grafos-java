@@ -5,26 +5,29 @@ import java.awt.*;
 
 public class PainelBusca extends JPanel {
 
-    private JLabel lblOrigem;
-    private JLabel lblDestino;
+    private final JTextField txtOrigem;
+    private final JTextField txtDestino;
 
-    private JTextField txtOrigem;
-    private JTextField txtDestino;
-
-    private JButton btnBuscarBFS;
-    private JButton btnBuscarDFS;
+    private final JButton btnBuscarBFS;
+    private final JButton btnBuscarDFS;
 
     public PainelBusca() {
 
+        //Serve para agrupar visualmente os elementos de busca.
         setBorder(BorderFactory.createTitledBorder("Buscar Caminho"));
 
+        //Serve para alinha os compenetes a esquerda
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        lblOrigem = new JLabel("Origem:");
-        txtOrigem = new JTextField(20);
-        lblDestino = new JLabel("Destino:");
+        //Cria o rotulo de texto
+        JLabel lblOrigem = new JLabel("Origem:");
 
+        //Cria a caixa de texto
+        txtOrigem = new JTextField(20);
+
+        JLabel lblDestino = new JLabel("Destino:");
         txtDestino = new JTextField(20);
+
         btnBuscarBFS = new JButton("Buscar BFS");
         btnBuscarDFS = new JButton("Buscar DFS");
 
