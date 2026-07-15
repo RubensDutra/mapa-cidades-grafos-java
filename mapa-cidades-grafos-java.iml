@@ -7,6 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="flatlaf-3.5.1" level="project" />
+    <orderEntry type="library" name="gs-algo-2.0" level="project" />
+    <orderEntry type="library" name="gs-core-2.0" level="project" />
+    <orderEntry type="library" name="gs-ui-swing-2.0" level="project" />
+    <orderEntry type="library" name="mbox2-1.0" level="project" />
+    <orderEntry type="library" name="pherd-1.0" level="project" />
   </component>
 </module>

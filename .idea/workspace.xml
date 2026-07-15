@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gs_core_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gs_ui_swing_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mbox2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/pherd_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/flatlaf_3_5_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gs_algo_2_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/app/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/model/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/model/Grafo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/service/BuscaBFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/service/BuscaBFS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/service/BuscaDFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/service/BuscaDFS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelBusca.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelBusca.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelCadastroCidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelCadastroCidade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelCadastroEstrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelCadastroEstrada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelListaCidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelListaCidades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelResultado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/PainelResultado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Busca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Busca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/BuscaBFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BuscaBFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/BuscaDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BuscaDFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PainelBusca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelBusca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PainelCadastroCidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelCadastroCidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PainelCadastroEstrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelCadastroEstrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PainelListaCidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelListaCidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PainelResultado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelResultado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapa-cidades-grafos-java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mapa-cidades-grafos-java.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,23 +38,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main2.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ruben/OneDrive/Área de Trabalho/IFMA - UNOPAR (2025)/SOFTWARE ADS/PROGRAMAÇÃO 1/Intellij java/PROGRAMAS CRIADOS/mapa-cidades-grafos-java/src/TesteView&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ruben/OneDrive/Área de Trabalho/IFMA - UNOPAR (2025)/SOFTWARE ADS/PROGRAMAÇÃO 1/Intellij java/PROGRAMAS CRIADOS/mapa-cidades-grafos-java/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Main2.executor": "Run",
+    "Application.Teste.executor": "Run",
+    "Application.app.Teste.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ruben/OneDrive/Área de Trabalho/IFMA - UNOPAR (2025)/SOFTWARE ADS/PROGRAMAÇÃO 1/Intellij java/PROGRAMAS CRIADOS/mapa-cidades-grafos-java/src/TesteView",
+    "onboarding.tips.debug.path": "C:/Users/ruben/OneDrive/Área de Trabalho/IFMA - UNOPAR (2025)/SOFTWARE ADS/PROGRAMAÇÃO 1/Intellij java/PROGRAMAS CRIADOS/mapa-cidades-grafos-java/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.26490712",
+    "project.structure.side.proportion": "0.375",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ruben\OneDrive\Área de Trabalho\IFMA - UNOPAR (2025)\SOFTWARE ADS\PROGRAMAÇÃO 1\Intellij java\PROGRAMAS CRIADOS\mapa-cidades-grafos-java\src\TesteView" />
@@ -84,7 +73,7 @@
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.app.Teste">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Main" />
       <module name="mapa-cidades-grafos-java" />
@@ -112,12 +101,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Teste" />
+      <module name="mapa-cidades-grafos-java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app.Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Teste" />
+      <module name="mapa-cidades-grafos-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.app.Teste" />
+      <item itemvalue="Application.Teste" />
       <item itemvalue="Application.Main2" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.app.Teste" />
+        <item itemvalue="Application.Teste" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main2" />
       </list>

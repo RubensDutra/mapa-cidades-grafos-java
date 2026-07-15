@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="flatlaf-3.5.1">
+  <library name="gs-algo-2.0">
     <CLASSES>
-      <root url="jar://$APPLICATION_HOME_DIR$/lib2/flatlaf-3.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/gs-algo-2.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
