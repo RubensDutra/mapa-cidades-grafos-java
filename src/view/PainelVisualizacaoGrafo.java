@@ -29,6 +29,35 @@ public class PainelVisualizacaoGrafo extends JPanel {
 
         grafoVisual = new SingleGraph("Mapa das Cidades");
 
+        grafoVisual.setAttribute(
+                "ui.stylesheet",
+                """
+                node {
+                    size: 20px;
+                    fill-color: #D6D6D6;
+                    stroke-mode: plain;
+                    stroke-color: black;
+                    stroke-width: 1px;
+                    text-size: 16;
+                    text-alignment: above;
+                    text-style: bold;
+                }
+        
+                node.origem {
+                    fill-color: #2ECC71;
+                }
+        
+                node.destino {
+                    fill-color: #E74C3C;
+                }
+        
+                edge {
+                    fill-color: #808080;
+                    size: 2px;
+                }
+                """
+        );
+
         viewer = new SwingViewer(
                 grafoVisual,
                 Viewer.ThreadingModel.GRAPH_IN_GUI_THREAD
@@ -39,6 +68,7 @@ public class PainelVisualizacaoGrafo extends JPanel {
         painelGraphStream = (ViewPanel) viewer.addDefaultView(false);
 
         add(painelGraphStream, BorderLayout.CENTER);
+
 
     }
 
@@ -75,6 +105,32 @@ public class PainelVisualizacaoGrafo extends JPanel {
         );
 
         estrada.setAttribute("ui.label", "");
+
+    }
+    public void limparDestaques() {
+
+        grafoVisual.nodes().forEach(node -> {
+
+            node.removeAttribute("ui.class");
+
+        });
+
+    }
+    public void destacarOrigemDestino(String origem, String destino) {
+
+        limparDestaques();
+
+        if (grafoVisual.getNode(origem) != null) {
+            grafoVisual
+                    .getNode(origem)
+                    .setAttribute("ui.class", "origem");
+        }
+
+        if (grafoVisual.getNode(destino) != null) {
+            grafoVisual
+                    .getNode(destino)
+                    .setAttribute("ui.class", "destino");
+        }
 
     }
 }

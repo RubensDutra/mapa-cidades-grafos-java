@@ -142,6 +142,11 @@ public class TelaPrincipal extends JPanel {
             return;
         }
 
+        painelVisualizacaoGrafo.destacarOrigemDestino(
+                cidadeOrigem,
+                cidadeDestino
+        );
+
         List<Cidade> caminho = busca.buscaCaminho(
                 grafo,
                 cidadeOrigem,

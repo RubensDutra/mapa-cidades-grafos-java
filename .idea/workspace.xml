@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
-    </list>
+    <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
