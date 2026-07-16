@@ -8,6 +8,11 @@ import org.graphstream.ui.swing_viewer.SwingViewer;
 import org.graphstream.ui.swing_viewer.ViewPanel;
 import org.graphstream.ui.view.Viewer;
 
+import model.Cidade;
+import org.graphstream.graph.Edge;
+
+import java.util.List;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -109,16 +114,21 @@ public class PainelVisualizacaoGrafo extends JPanel {
     }
     public void limparDestaques() {
 
+        // Limpa todos os vértices
         grafoVisual.nodes().forEach(node -> {
-
             node.removeAttribute("ui.class");
+        });
 
+        // Limpa todas as arestas
+        grafoVisual.edges().forEach(edge -> {
+            edge.removeAttribute("ui.class");
         });
 
     }
     public void destacarOrigemDestino(String origem, String destino) {
 
         limparDestaques();
+
 
         if (grafoVisual.getNode(origem) != null) {
             grafoVisual
@@ -131,6 +141,50 @@ public class PainelVisualizacaoGrafo extends JPanel {
                     .getNode(destino)
                     .setAttribute("ui.class", "destino");
         }
+
+    }
+
+    public void destacarCaminhoBFS(List<Cidade> caminho) {
+
+        limparDestaques();
+
+        if (caminho == null || caminho.isEmpty()) {
+            return;
+        }
+
+        for (Cidade cidade : caminho) {
+
+            if (grafoVisual.getNode(cidade.getNome()) != null) {
+
+                grafoVisual
+                        .getNode(cidade.getNome())
+                        .setAttribute("ui.class", "caminhoBFS");
+            }
+        }
+
+        for (int i = 0; i < caminho.size() - 1; i++) {
+
+            String origem = caminho.get(i).getNome();
+            String destino = caminho.get(i + 1).getNome();
+
+            Edge edge = grafoVisual.getEdge(origem + "-" + destino);
+
+            if (edge == null) {
+                edge = grafoVisual.getEdge(destino + "-" + origem);
+            }
+
+            if (edge != null) {
+                edge.setAttribute("ui.class", "caminhoBFS");
+            }
+        }
+
+        grafoVisual
+                .getNode(caminho.get(0).getNome())
+                .setAttribute("ui.class", "origem");
+
+        grafoVisual
+                .getNode(caminho.get(caminho.size() - 1).getNome())
+                .setAttribute("ui.class", "destino");
 
     }
 }

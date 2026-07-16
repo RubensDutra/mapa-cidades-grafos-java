@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="" />
+    <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +154,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>257</line>
+          <line>262</line>
           <properties class="view.TelaPrincipal" method="atualizarListaCidades">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -175,6 +178,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java</url>
+          <line>83</line>
+          <properties class="view.PainelVisualizacaoGrafo" method="adicionarCidade">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
