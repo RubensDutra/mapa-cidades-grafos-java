@@ -1,6 +1,7 @@
 package view;
 
 import org.graphstream.graph.Graph;
+import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.ui.swing_viewer.SwingViewer;
 import org.graphstream.ui.swing_viewer.ViewPanel;
@@ -44,4 +45,15 @@ public class PainelVisualizacaoGrafo extends JPanel {
         return grafoVisual;
     }
 
+    public void adicionarCidade(String nomeCidade) {
+
+        if (grafoVisual.getNode(nomeCidade) != null) {
+            return;
+        }
+
+        Node cidade = grafoVisual.addNode(nomeCidade);
+
+        cidade.setAttribute("ui.label", nomeCidade);
+
+    }
 }

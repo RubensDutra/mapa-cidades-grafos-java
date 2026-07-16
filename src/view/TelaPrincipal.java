@@ -197,8 +197,8 @@ public class TelaPrincipal extends JPanel {
             Cidade cidade = new Cidade(nomeCidade);
 
             try {
-
                 grafo.adicionarCidade(cidade);
+                painelVisualizacaoGrafo.adicionarCidade(cidade.getNome());
                 atualizarListaCidades();
                 painelCadastroCidade.getTxtCidade().setText("");
                 painelCadastroCidade.getTxtCidade().requestFocus();

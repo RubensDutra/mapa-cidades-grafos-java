@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/app/Teste.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +153,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>246</line>
+          <line>257</line>
           <properties class="view.TelaPrincipal" method="atualizarListaCidades">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -166,7 +162,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>84</line>
+          <line>88</line>
           <properties class="view.TelaPrincipal" method="organizarTela">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
