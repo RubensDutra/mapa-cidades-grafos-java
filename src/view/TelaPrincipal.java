@@ -1,6 +1,5 @@
 package view;
 
-
 import exception.CidadeDuplicadaException;
 import exception.CidadeInvalidaException;
 import exception.CidadeNaoEncontradaException;
@@ -15,7 +14,7 @@ import service.BuscaDFS;
 
 import javax.swing.*;
 
-import java.awt.GridLayout;
+import java.awt.*;
 
 import java.util.List;
 
@@ -32,6 +31,7 @@ public class TelaPrincipal extends JPanel {
     private PainelBusca painelBusca;
     private PainelResultado painelResultado;
     private PainelListaCidades painelLista;
+    private PainelVisualizacaoGrafo painelVisualizacaoGrafo;
 
     public TelaPrincipal(Grafo grafo, BuscaBFS buscaBFS, BuscaDFS buscaDFS) {
 
@@ -57,11 +57,15 @@ public class TelaPrincipal extends JPanel {
 
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        janela.setSize(900, 700);
+        janela.setSize(1200, 850);
 
         janela.setLocationRelativeTo(null);
 
         janela.setResizable(true);
+
+        janela.getRootPane().setBorder(
+                BorderFactory.createEmptyBorder(10,10,10,10)
+        );
 
 
     }
@@ -78,22 +82,32 @@ public class TelaPrincipal extends JPanel {
 
         painelLista = new PainelListaCidades();
 
+        painelVisualizacaoGrafo = new PainelVisualizacaoGrafo();
+
     }
 
     private void organizarTela() {
 
-        janela.setLayout(new GridLayout(5, 1));
+        janela.setLayout(new BorderLayout(10, 10));
 
-        janela.add(painelCadastroCidade);
+        JPanel painelSuperior = new JPanel();
+        painelSuperior.setLayout(new GridLayout(3, 1, 5, 5));
 
-        janela.add(painelCadastroEstrada);
+        painelSuperior.add(painelCadastroCidade);
+        painelSuperior.add(painelCadastroEstrada);
+        painelSuperior.add(painelBusca);
 
-        janela.add(painelBusca);
+        JPanel painelInferior = new JPanel();
+        painelInferior.setLayout(new GridLayout(1, 2, 10, 10));
 
-        janela.add(painelResultado);
+        painelInferior.add(painelResultado);
+        painelInferior.add(painelLista);
 
-        janela.add(painelLista);
+        janela.add(painelSuperior, BorderLayout.NORTH);
 
+        janela.add(painelVisualizacaoGrafo, BorderLayout.CENTER);
+
+        janela.add(painelInferior, BorderLayout.SOUTH);
     }
 
     // PROMPT 09 parte gerada pela IA
@@ -254,7 +268,9 @@ public class TelaPrincipal extends JPanel {
             area.append("\n");
 
         }
-
     }
 
+    public PainelVisualizacaoGrafo getPainelVisualizacaoGrafo() {
+        return painelVisualizacaoGrafo;
+    }
 }

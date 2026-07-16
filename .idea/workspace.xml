@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="092396e1-681a-49bd-9a54-3f01166f633c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gs_core_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gs_ui_swing_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mbox2_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/pherd_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/flatlaf_3_5_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gs_algo_2_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapa-cidades-grafos-java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mapa-cidades-grafos-java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/app/Teste.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mapa-cidades-grafos-java/view/TelaPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PainelVisualizacaoGrafo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,25 +35,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Main2.executor": "Run",
-    "Application.Teste.executor": "Run",
-    "Application.app.Teste.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ruben/OneDrive/Área de Trabalho/IFMA - UNOPAR (2025)/SOFTWARE ADS/PROGRAMAÇÃO 1/Intellij java/PROGRAMAS CRIADOS/mapa-cidades-grafos-java/src/TesteView",
-    "onboarding.tips.debug.path": "C:/Users/ruben/OneDrive/Área de Trabalho/IFMA - UNOPAR (2025)/SOFTWARE ADS/PROGRAMAÇÃO 1/Intellij java/PROGRAMAS CRIADOS/mapa-cidades-grafos-java/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.26490712",
-    "project.structure.side.proportion": "0.375",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Teste.executor&quot;: &quot;Run&quot;,
+    &quot;Application.app.Teste.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ruben/OneDrive/Área de Trabalho/IFMA - UNOPAR (2025)/SOFTWARE ADS/PROGRAMAÇÃO 1/Intellij java/PROGRAMAS CRIADOS/mapa-cidades-grafos-java/src/TesteView&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ruben/OneDrive/Área de Trabalho/IFMA - UNOPAR (2025)/SOFTWARE ADS/PROGRAMAÇÃO 1/Intellij java/PROGRAMAS CRIADOS/mapa-cidades-grafos-java/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.26490712&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.375&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ruben\OneDrive\Área de Trabalho\IFMA - UNOPAR (2025)\SOFTWARE ADS\PROGRAMAÇÃO 1\Intellij java\PROGRAMAS CRIADOS\mapa-cidades-grafos-java\src\TesteView" />
@@ -73,7 +70,7 @@
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.app.Teste">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Main" />
       <module name="mapa-cidades-grafos-java" />
@@ -129,9 +126,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.app.Teste" />
         <item itemvalue="Application.Teste" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main2" />
       </list>
     </recent_temporary>
@@ -160,7 +157,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>243</line>
+          <line>246</line>
           <properties class="view.TelaPrincipal" method="atualizarListaCidades">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -169,7 +166,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/TelaPrincipal.java</url>
-          <line>82</line>
+          <line>84</line>
           <properties class="view.TelaPrincipal" method="organizarTela">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
