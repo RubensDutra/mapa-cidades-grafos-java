@@ -1,5 +1,6 @@
 package view;
 
+import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
@@ -54,6 +55,26 @@ public class PainelVisualizacaoGrafo extends JPanel {
         Node cidade = grafoVisual.addNode(nomeCidade);
 
         cidade.setAttribute("ui.label", nomeCidade);
+
+    }
+    public void adicionarEstrada(String cidadeOrigem, String cidadeDestino) {
+
+        String idEstrada = cidadeOrigem + "-" + cidadeDestino;
+
+        String idEstradaInvertida = cidadeDestino + "-" + cidadeOrigem;
+
+        if (grafoVisual.getEdge(idEstrada) != null ||
+                grafoVisual.getEdge(idEstradaInvertida) != null) {
+            return;
+        }
+
+        Edge estrada = grafoVisual.addEdge(
+                idEstrada,
+                cidadeOrigem,
+                cidadeDestino
+        );
+
+        estrada.setAttribute("ui.label", "");
 
     }
 }

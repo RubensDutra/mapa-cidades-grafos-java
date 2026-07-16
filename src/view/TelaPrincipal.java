@@ -230,7 +230,7 @@ public class TelaPrincipal extends JPanel {
 
             try {
                 grafo.adicionarEstrada(cidadeOrigem, cidadeDestino);
-
+                painelVisualizacaoGrafo.adicionarEstrada(cidadeOrigem, cidadeDestino);
                 JOptionPane.showMessageDialog(janela, "Estrada cadastrada com sucesso!");
 
                 painelCadastroEstrada.getTxtOrigem().setText("");
