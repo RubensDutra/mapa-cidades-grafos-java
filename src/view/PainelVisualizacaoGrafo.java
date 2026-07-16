@@ -33,7 +33,6 @@ public class PainelVisualizacaoGrafo extends JPanel {
         System.setProperty("org.graphstream.ui", "swing");
 
         grafoVisual = new SingleGraph("Mapa das Cidades");
-
         grafoVisual.setAttribute(
                 "ui.stylesheet",
                 """
@@ -47,18 +46,36 @@ public class PainelVisualizacaoGrafo extends JPanel {
                     text-alignment: above;
                     text-style: bold;
                 }
-        
+            
                 node.origem {
                     fill-color: #2ECC71;
                 }
-        
+            
                 node.destino {
                     fill-color: #E74C3C;
                 }
-        
+            
+                node.caminhoBFS {
+                    fill-color: #3498DB;
+                }
+            
+                node.caminhoDFS {
+                    fill-color: #27AE60;
+                }
+            
                 edge {
                     fill-color: #808080;
                     size: 2px;
+                }
+            
+                edge.caminhoBFS {
+                    fill-color: #3498DB;
+                    size: 4px;
+                }
+            
+                edge.caminhoDFS {
+                    fill-color: #27AE60;
+                    size: 4px;
                 }
                 """
         );
@@ -92,6 +109,7 @@ public class PainelVisualizacaoGrafo extends JPanel {
         cidade.setAttribute("ui.label", nomeCidade);
 
     }
+
     public void adicionarEstrada(String cidadeOrigem, String cidadeDestino) {
 
         String idEstrada = cidadeOrigem + "-" + cidadeDestino;
@@ -112,6 +130,7 @@ public class PainelVisualizacaoGrafo extends JPanel {
         estrada.setAttribute("ui.label", "");
 
     }
+
     public void limparDestaques() {
 
         // Limpa todos os vértices
@@ -125,6 +144,7 @@ public class PainelVisualizacaoGrafo extends JPanel {
         });
 
     }
+
     public void destacarOrigemDestino(String origem, String destino) {
 
         limparDestaques();
@@ -142,6 +162,49 @@ public class PainelVisualizacaoGrafo extends JPanel {
                     .setAttribute("ui.class", "destino");
         }
 
+    }
+
+    public void destacarCaminhoDFS(List<Cidade> caminho) {
+
+        limparDestaques();
+
+        if (caminho == null || caminho.isEmpty()) {
+            return;
+        }
+
+        for (Cidade cidade : caminho) {
+
+            if (grafoVisual.getNode(cidade.getNome()) != null) {
+
+                grafoVisual
+                        .getNode(cidade.getNome())
+                        .setAttribute("ui.class", "caminhoDFS");
+            }
+        }
+
+        for (int i = 0; i < caminho.size() - 1; i++) {
+
+            String origem = caminho.get(i).getNome();
+            String destino = caminho.get(i + 1).getNome();
+
+            Edge edge = grafoVisual.getEdge(origem + "-" + destino);
+
+            if (edge == null) {
+                edge = grafoVisual.getEdge(destino + "-" + origem);
+            }
+
+            if (edge != null) {
+                edge.setAttribute("ui.class", "caminhoDFS");
+            }
+        }
+
+        grafoVisual
+                .getNode(caminho.get(0).getNome())
+                .setAttribute("ui.class", "origem");
+
+        grafoVisual
+                .getNode(caminho.get(caminho.size() - 1).getNome())
+                .setAttribute("ui.class", "destino");
     }
 
     public void destacarCaminhoBFS(List<Cidade> caminho) {
