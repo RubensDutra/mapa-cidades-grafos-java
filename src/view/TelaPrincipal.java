@@ -53,7 +53,7 @@ public class TelaPrincipal extends JPanel {
 
     private void configurarJanela() {
 
-        janela = new JFrame("Sistema de Mapeamento de Cidades");
+        janela = new JFrame("Sistema de Mapeamento de Cidades - Grafos");
 
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

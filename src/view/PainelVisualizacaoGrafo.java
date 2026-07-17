@@ -27,8 +27,13 @@ public class PainelVisualizacaoGrafo extends JPanel {
     public PainelVisualizacaoGrafo() {
 
         setLayout(new BorderLayout());
-
-        setBorder(BorderFactory.createTitledBorder("Visualização do Grafo"));
+        setBackground(Color.WHITE);
+        setBorder(
+                BorderFactory.createTitledBorder(
+                        BorderFactory.createEtchedBorder(),
+                        "Mapa das Cidades"
+                )
+        );
 
         System.setProperty("org.graphstream.ui", "swing");
 
@@ -36,46 +41,54 @@ public class PainelVisualizacaoGrafo extends JPanel {
         grafoVisual.setAttribute(
                 "ui.stylesheet",
                 """
+                graph {
+                    fill-color: white;
+                    padding: 40px;
+                }
+        
                 node {
-                    size: 20px;
+                    size: 28px;
                     fill-color: #D6D6D6;
                     stroke-mode: plain;
-                    stroke-color: black;
-                    stroke-width: 1px;
-                    text-size: 16;
-                    text-alignment: above;
+                    stroke-color: #2C3E50;
+                    stroke-width: 2px;
+        
+                    text-size: 18;
                     text-style: bold;
+                    text-color: #2C3E50;
+                    text-alignment: above;
+                    text-offset: 0, -8;
                 }
-            
+        
+                edge {
+                    fill-color: #B0B0B0;
+                    size: 3px;
+                }
+        
                 node.origem {
                     fill-color: #2ECC71;
                 }
-            
+        
                 node.destino {
                     fill-color: #E74C3C;
                 }
-            
+        
                 node.caminhoBFS {
                     fill-color: #3498DB;
                 }
-            
+        
+                edge.caminhoBFS {
+                    fill-color: #3498DB;
+                    size: 5px;
+                }
+        
                 node.caminhoDFS {
                     fill-color: #27AE60;
                 }
-            
-                edge {
-                    fill-color: #808080;
-                    size: 2px;
-                }
-            
-                edge.caminhoBFS {
-                    fill-color: #3498DB;
-                    size: 4px;
-                }
-            
+        
                 edge.caminhoDFS {
                     fill-color: #27AE60;
-                    size: 4px;
+                    size: 5px;
                 }
                 """
         );
@@ -86,6 +99,8 @@ public class PainelVisualizacaoGrafo extends JPanel {
         );
 
         viewer.enableAutoLayout();
+        grafoVisual.setAttribute("layout.quality", 4);
+        grafoVisual.setAttribute("layout.stabilization-limit", 0.95);
 
         painelGraphStream = (ViewPanel) viewer.addDefaultView(false);
 
