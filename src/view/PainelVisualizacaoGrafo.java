@@ -104,8 +104,10 @@ public class PainelVisualizacaoGrafo extends JPanel {
 
         painelGraphStream = (ViewPanel) viewer.addDefaultView(false);
 
+
         add(painelGraphStream, BorderLayout.CENTER);
 
+        add(criarLegenda(), BorderLayout.SOUTH);
 
     }
 
@@ -224,5 +226,37 @@ public class PainelVisualizacaoGrafo extends JPanel {
         grafoVisual
                 .getNode(caminho.get(caminho.size() - 1).getNome())
                 .setAttribute("ui.class", "destino");
+    }
+
+    private JPanel criarLegenda() {
+
+        JPanel painelLegenda = new JPanel(new FlowLayout(FlowLayout.CENTER, 35, 8));
+
+        painelLegenda.add(criarItemLegenda("●", Color.decode("#2ECC71"), "Origem"));
+
+        painelLegenda.add(criarItemLegenda("●", Color.decode("#E74C3C"), "Destino"));
+
+        painelLegenda.add(criarItemLegenda("●", Color.decode("#3498DB"), "Caminho BFS"));
+
+        painelLegenda.add(criarItemLegenda("●", Color.decode("#27AE60"), "Caminho DFS"));
+
+        return painelLegenda;
+    }
+
+    private JPanel criarItemLegenda(String simbolo, Color cor, String texto) {
+
+        JPanel painel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
+
+        JLabel lblSimbolo = new JLabel(simbolo);
+        lblSimbolo.setForeground(cor);
+        lblSimbolo.setFont(new Font("Arial", Font.BOLD, 20));
+
+        JLabel lblTexto = new JLabel(texto);
+        lblTexto.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+
+        painel.add(lblSimbolo);
+        painel.add(lblTexto);
+
+        return painel;
     }
 }
