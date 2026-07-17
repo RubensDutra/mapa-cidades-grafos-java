@@ -109,7 +109,6 @@ public class PainelVisualizacaoGrafo extends JPanel {
         cidade.setAttribute("ui.label", nomeCidade);
 
     }
-
     public void adicionarEstrada(String cidadeOrigem, String cidadeDestino) {
 
         String idEstrada = cidadeOrigem + "-" + cidadeDestino;
@@ -130,7 +129,6 @@ public class PainelVisualizacaoGrafo extends JPanel {
         estrada.setAttribute("ui.label", "");
 
     }
-
     public void limparDestaques() {
 
         // Limpa todos os vértices
@@ -144,7 +142,6 @@ public class PainelVisualizacaoGrafo extends JPanel {
         });
 
     }
-
     public void destacarOrigemDestino(String origem, String destino) {
 
         limparDestaques();
@@ -165,49 +162,13 @@ public class PainelVisualizacaoGrafo extends JPanel {
     }
 
     public void destacarCaminhoDFS(List<Cidade> caminho) {
-
-        limparDestaques();
-
-        if (caminho == null || caminho.isEmpty()) {
-            return;
-        }
-
-        for (Cidade cidade : caminho) {
-
-            if (grafoVisual.getNode(cidade.getNome()) != null) {
-
-                grafoVisual
-                        .getNode(cidade.getNome())
-                        .setAttribute("ui.class", "caminhoDFS");
-            }
-        }
-
-        for (int i = 0; i < caminho.size() - 1; i++) {
-
-            String origem = caminho.get(i).getNome();
-            String destino = caminho.get(i + 1).getNome();
-
-            Edge edge = grafoVisual.getEdge(origem + "-" + destino);
-
-            if (edge == null) {
-                edge = grafoVisual.getEdge(destino + "-" + origem);
-            }
-
-            if (edge != null) {
-                edge.setAttribute("ui.class", "caminhoDFS");
-            }
-        }
-
-        grafoVisual
-                .getNode(caminho.get(0).getNome())
-                .setAttribute("ui.class", "origem");
-
-        grafoVisual
-                .getNode(caminho.get(caminho.size() - 1).getNome())
-                .setAttribute("ui.class", "destino");
+        destacarCaminho(caminho, "caminhoDFS");
+    }
+    public void destacarCaminhoBFS(List<Cidade> caminho) {
+        destacarCaminho(caminho, "caminhoBFS");
     }
 
-    public void destacarCaminhoBFS(List<Cidade> caminho) {
+    private void destacarCaminho(List<Cidade> caminho, String classeCSS) {
 
         limparDestaques();
 
@@ -221,7 +182,7 @@ public class PainelVisualizacaoGrafo extends JPanel {
 
                 grafoVisual
                         .getNode(cidade.getNome())
-                        .setAttribute("ui.class", "caminhoBFS");
+                        .setAttribute("ui.class", classeCSS);
             }
         }
 
@@ -237,7 +198,7 @@ public class PainelVisualizacaoGrafo extends JPanel {
             }
 
             if (edge != null) {
-                edge.setAttribute("ui.class", "caminhoBFS");
+                edge.setAttribute("ui.class", classeCSS);
             }
         }
 
@@ -248,6 +209,5 @@ public class PainelVisualizacaoGrafo extends JPanel {
         grafoVisual
                 .getNode(caminho.get(caminho.size() - 1).getNome())
                 .setAttribute("ui.class", "destino");
-
     }
 }
