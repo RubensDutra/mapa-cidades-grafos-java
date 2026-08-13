@@ -25,6 +25,29 @@ public class Grafo {
         }
 
         cidades.add(novaCidade);
+
+        garantirCapacidade(cidades.size());
+    }
+
+    private void garantirCapacidade(int novoNumeroCidades) {
+
+        int tamanhoAtual = matrizAdjacente.length;
+
+        if (novoNumeroCidades <= tamanhoAtual) {
+            return;
+        }
+
+        int novoCapacidade = Math.max(novoNumeroCidades * 2, tamanhoAtual + 2);
+
+        boolean[][] novaMatriz = new boolean[novoCapacidade][novoCapacidade];
+
+        for (int i = 0; i < tamanhoAtual; i++) {
+            for (int j = 0; j < tamanhoAtual; j++) {
+                novaMatriz[i][j] = matrizAdjacente[i][j];
+            }
+        }
+
+        matrizAdjacente = novaMatriz;
     }
 
     public List<Cidade> getCidades() {
